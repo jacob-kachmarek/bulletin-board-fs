@@ -14,8 +14,12 @@ let postsArray = [];
 window.addEventListener('load', async () => {
     const postsData = await getPosts();
     postsArray = postsData;
-    console.log(postsArray);
+    // console.log(postsArray);
     displayPosts();
+});
+
+signInButton.addEventListener('click', () => {
+    window.location.href = './auth';
 });
 
 /* Display Functions */
