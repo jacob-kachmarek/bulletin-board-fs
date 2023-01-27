@@ -4,6 +4,8 @@ export function renderPosts(post) {
     const descriptionEl = document.createElement('p');
     const contactEl = document.createElement('p');
 
+    div.classList.add('post-container');
+
     titleEl.textContent = post.title;
     descriptionEl.textContent = post.description;
     contactEl.textContent = post.contact;

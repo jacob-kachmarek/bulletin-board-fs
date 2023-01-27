@@ -1,5 +1,5 @@
 /* Imports */
-import { getPosts } from './fetch-utils.js';
+import { getPosts, getUser, signOut, checkAuth } from './fetch-utils.js';
 import { renderPosts } from './render-functions.js';
 
 /* Get DOM Elements */
@@ -12,6 +12,10 @@ let postsArray = [];
 
 /* Events */
 window.addEventListener('load', async () => {
+    const user = await getUser();
+    if (user) {
+        signInButton.textContent = 'log out';
+    }
     const postsData = await getPosts();
     postsArray = postsData;
     // console.log(postsArray);
@@ -19,7 +23,12 @@ window.addEventListener('load', async () => {
 });
 
 signInButton.addEventListener('click', () => {
+    if (getUser()) signOut();
     window.location.href = './auth';
+});
+
+createPageButton.addEventListener('click', async () => {
+    window.location.href = './create';
 });
 
 /* Display Functions */

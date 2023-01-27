@@ -38,3 +38,10 @@ main {
     display: flex;
     margin-left: auto;
 }
+
+.post-container {
+    display: block;
+
+    border: 1px black solid;
+    font-size: 10px;
+}
