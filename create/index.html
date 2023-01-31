@@ -15,34 +15,31 @@
         ></script>
 
         <!-- js -->
-        <script type="module" src="app.js"></script>
+        <script type="module" src="create.js"></script>
 
         <!-- fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Unbounded&display=swap"
-            rel="stylesheet"
-        />
         <!-- see https://fonts.google.com/ -->
 
         <!-- css -->
-        <link rel="stylesheet" href="styles/reset.css" />
-        <link rel="stylesheet" href="styles/global.css" />
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="./create.css" />
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header>
-            <h1>Community Bulletin Board</h1>
-            <div class="button">
-                <button id="sign-in-button">Sign In</button>
-                <button id="create-page-button">Create</button>
-            </div>
+            <h1>Create</h1>
+            <button>Back to Bulletin Board</button>
         </header>
 
         <main>
-            <div id="posts"></div>
+            <form class="create-form">
+                <label><input name="title" />Title</label>
+                <label><input name="description" />Description</label>
+                <label><input name="contact" />Contact Info</label>
+                <button>Create</button>
+            </form>
         </main>
     </body>
 </html>

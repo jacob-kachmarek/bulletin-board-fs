@@ -1,27 +1,58 @@
-## The Golden Rule:
+![Wireframe](./assets/Wireframe.png)
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+# List Page
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+## Data Model
 
-## Making a plan
+    Topic: string
+    Description: string
+    Contact: string
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## Html
 
-Additional considerations:
+    -Login Button
+    -Create Button
+    -Empty div
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+## Events
+
+    -Load
+        See if user is logged in if they are change to logout button
+    -On click login
+        redirects to auth
+    -On click logout
+        Log out user change button text to login
+    -on click create
+        Redirects to create
+
+# Auth
+
+## Html
+
+    -Form Sign in
+    -Form Sign up
+
+## Events
+
+    -On load
+        check if user is logged in if they are redirect to list page
+    -Submit Sign in
+        Get email and password
+        Call signIn function from fetch
+        redirect to list page
+    -Submit Sign up
+        Get email and password
+        Call signUp function form fetch
+        Redirect to list page
+
+# Create
+
+## Html
+
+    -Form for 'create a post'
+
+## Events
+
+    -Form submit
+        from data creates posts and updates supabase
+
