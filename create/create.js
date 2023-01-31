@@ -1,6 +1,11 @@
 import { checkAuth, createPost, getUser } from '../fetch-utils.js';
 checkAuth();
 const createEl = document.querySelector('.create-form');
+const button = document.querySelector('button');
+
+button.addEventListener('click', () => {
+    window.location.href = '../';
+});
 
 createEl.addEventListener('submit', async (e) => {
     e.preventDefault();
